@@ -22,10 +22,8 @@ let COLS = {
   country: 'Country (or dependency)',
   population: 'Population 2025',
   yearlyChange: 'Yearly Change',
-  netChange: 'Net Change',
   density: 'Density (P/Km²)',
   landArea: 'Land Area (Km²)',
-  migrants: 'Migrants (net)',
   fertilityRate: 'Fert. Rate',
   medianAge: 'Median Age',
   urbanPop: 'Urban Pop %',
@@ -749,11 +747,6 @@ function drawDashedCircle(x, y, diameter, col, weight) {
   for (let i = 0; i < numDashes; i++) {
     let startAngle = (i * totalDashUnit / radius);
     let endAngle = startAngle + (dashLength / radius);
-    
-    let startX = x + cos(startAngle) * radius;
-    let startY = y + sin(startAngle) * radius;
-    let endX = x + cos(endAngle) * radius;
-    let endY = y + sin(endAngle) * radius;
     
     // Disegna piccoli archi invece di linee per seguire la curvatura
     noFill();
